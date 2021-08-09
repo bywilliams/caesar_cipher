@@ -17,5 +17,5 @@ samples, guidance on mobile development, and a full API reference.
 
 # image of Application
 
-![image da aplicação](/caesar_cipher/images/caesar_cipher.gif)
+![image da aplicação](/images/caesar_cipher.gif)
 
