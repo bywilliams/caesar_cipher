@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'alfabeto.dart';
+
+Alfabeto lista = new Alfabeto();
 
 void main() {
   runApp(MyApp());
@@ -16,60 +19,7 @@ class _MyAppState extends State<MyApp> {
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
   bool switchValue = true;
-  List<String> alfabeto = [
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z',
-    'a',
-    'b',
-    'c',
-    'd',
-    'e',
-    'f',
-    'g',
-    'h',
-    'i',
-    'j',
-    'k',
-    'l',
-    'm',
-    'n',
-    'o',
-    'p',
-    'q',
-    'r',
-    's',
-    't',
-    'u',
-    'v',
-    'w',
-    'x',
-    'y',
-    'z'
-  ];
+
   String information = "";
   String direction = "";
   String endOfText = '';
@@ -78,9 +28,9 @@ class _MyAppState extends State<MyApp> {
     String texto = text.text;
     int troca = int.parse(shift.text);
     setState(() {
-      for (var char in texto.characters) {
-        if (alfabeto.contains(char)) {
-          int position = alfabeto.indexOf(char);
+      for (String char in texto.characters) {
+        if (lista.alfabeto.contains(char)) {
+          int position = lista.alfabeto.indexOf(char);
           var newPosition;
           if (switchValue == false) {
             newPosition = position - troca;
@@ -92,8 +42,8 @@ class _MyAppState extends State<MyApp> {
           if (troca > 25) {
             newPosition %= 26;
           }
-          var newLetter = alfabeto[newPosition];
-          endOfText += alfabeto[newPosition];
+          //var newLetter = alfabeto[newPosition];
+          endOfText += lista.alfabeto[newPosition];
         } else {
           endOfText += char;
         }
